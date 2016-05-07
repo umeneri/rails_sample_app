@@ -6,3 +6,4 @@
 [Michael Hartl](http://www.michaelhartl.com/)著
 
 
+master test
