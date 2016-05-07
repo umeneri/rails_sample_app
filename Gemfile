@@ -14,6 +14,11 @@ group :development, :test do
   gem 'byebug',      '3.4.0'
   gem 'web-console', '2.0.0.beta3'
   gem 'spring',      '1.1.3'
+
+  gem 'pry-rails'  # rails console(もしくは、rails c)でirbの代わりにpryを使われる
+  gem 'pry-doc'    # methodを表示
+  gem 'pry-byebug' # デバッグを実施(Ruby 2.0以降で動作する)
+  gem 'pry-stack_explorer' # スタックをたどれるend
 end
 
 group :test do
@@ -28,4 +33,5 @@ group :production do
 end
 
 gem 'bootstrap-sass',       '3.2.0.0'
+gem 'bcrypt', '3.1.7'
 
