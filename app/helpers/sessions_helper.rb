@@ -1,4 +1,6 @@
 module SessionsHelper
+
+   # loginしているかどうかの定義: user_idを記憶している
   def log_in(user)
     session[:user_id] = user.id
   end
@@ -38,4 +40,19 @@ module SessionsHelper
     session.delete(:user_id)
     @current_user = nil
   end
+
+  # 与えられたユーザーがログイン済みユーザーであればtrueを返す
+  def current_user?(user)
+    user == current_user
+  end
+
+  def redirect_back_or(default)
+    redirect_to(session[:forwarding_url] || default)
+    session.delete(:forwarding_url)
+  end
+
+  def store_location
+    session[:forwarding_url] = request.url if request.get?
+  end
+
 end
