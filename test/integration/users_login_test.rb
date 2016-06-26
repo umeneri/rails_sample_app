@@ -16,7 +16,6 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
   end
 
   test "login with valid information followed by logout" do
-
     # log in
     get login_path
     post login_path, session: { email: @user.email, password: 'password' }
