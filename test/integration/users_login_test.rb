@@ -12,7 +12,11 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
   end
 
   def setup
-    @user = users(:michael)
+    # @user = users(:michael)
+    @user = users(:archer)
+    # @user = User.all.first
+    Rails::logger.debug @user.inspect
+    Rails::logger.debug Time.zone.now
   end
 
   test "login with valid information followed by logout" do
