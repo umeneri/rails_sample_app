@@ -7,6 +7,7 @@ class UserMailer < ApplicationMailer
   #
   def account_activation(user)
     @user = user
+    logger.debug(user.inspect)
     mail to: user.email, subject: "Account activation"
   end
 
