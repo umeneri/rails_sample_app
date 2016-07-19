@@ -8,7 +8,9 @@ class UserMailer < ApplicationMailer
   def account_activation(user)
     @user = user
     logger.debug(user.inspect)
+    logger.debug(user.activation_token)
     mail to: user.email, subject: "Account activation"
+    return user
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml
