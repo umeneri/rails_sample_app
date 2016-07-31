@@ -1,0 +1,5 @@
+// ボタン更新
+$("#follow_form").html("<%= escape_javascript(render('users/follow')) %>");
+// 統計情報の更新
+$("#followers").html("<%= @user.followers.count %>");
+
